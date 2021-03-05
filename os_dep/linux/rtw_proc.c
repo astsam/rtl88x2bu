@@ -5069,16 +5069,13 @@ struct proc_dir_entry *rtw_odm_proc_init(struct net_device *dev)
 			entry = rtw_proc_create_entry(odm_proc_hdls[i].name, dir_odm, &rtw_odm_proc_seq_ops, (void *)i);
 #else
 			entry = rtw_proc_create_entry(odm_proc_hdls[i].name, dir_odm, &rtw_odm_proc_seq_fops, (void *)i);
-<<<<<<< HEAD
+#endif
 		else if (odm_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ ||
 			 odm_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SZSEQ)
-=======
-#endif
-		else if (odm_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ)
+//		else if (odm_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ)
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0))
 			entry = rtw_proc_create_entry(odm_proc_hdls[i].name, dir_odm, &rtw_odm_proc_sseq_ops, (void *)i);
 #else
->>>>>>> 029530e (convert from "struct file_operations" to "struct proc_ops" to support)
 			entry = rtw_proc_create_entry(odm_proc_hdls[i].name, dir_odm, &rtw_odm_proc_sseq_fops, (void *)i);
 #endif
 		else
@@ -5314,16 +5311,14 @@ struct proc_dir_entry *rtw_adapter_proc_init(struct net_device *dev)
 			entry = rtw_proc_create_entry(adapter_proc_hdls[i].name, dir_dev, &rtw_adapter_proc_seq_ops, (void *)i);
 #else
 			entry = rtw_proc_create_entry(adapter_proc_hdls[i].name, dir_dev, &rtw_adapter_proc_seq_fops, (void *)i);
-<<<<<<< HEAD
+#endif
+
 		else if (adapter_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ ||
 			 adapter_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SZSEQ)
-=======
-#endif
-		else if (adapter_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ)
+//		else if (adapter_proc_hdls[i].type == RTW_PROC_HDL_TYPE_SSEQ)
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0))
 			entry = rtw_proc_create_entry(adapter_proc_hdls[i].name, dir_dev, &rtw_adapter_proc_sseq_ops, (void *)i);
 #else
->>>>>>> 029530e (convert from "struct file_operations" to "struct proc_ops" to support)
 			entry = rtw_proc_create_entry(adapter_proc_hdls[i].name, dir_dev, &rtw_adapter_proc_sseq_fops, (void *)i);
 #endif
 		else
